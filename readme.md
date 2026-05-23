@@ -31,9 +31,8 @@ The app is split into three simple parts:
 
 ## ⚙️ Real-World Constraints
 
-* **Geographical Boundary (Kaggle Dataset):** The underlying machine learning model was trained on a structural King County housing dataset from Kaggle. Because regression models rely heavily on the exact area they were trained on, **the model will not give accurate answers for locations away from Seattle**. To make testing easy, I added preset buttons in the UI that automatically fill in valid Seattle coordinates with one click.
+* **Geographical Boundary (Kaggle Dataset):** The underlying machine learning model was trained on a structural King County housing dataset from Kaggle. Because regression models rely heavily on the exact area they were trained on, **the model will not give accurate answers for locations away from Seattle**.
 * **Cloud Hosting Delay (Render Free Tier):** Since the Node.js API and Python microservice are on Render's free tier, they take **about 50 seconds each to wake up** if they haven't been used in a while. I built loading indicators into the frontend UI to keep the user informed while the servers spin back up.
-* **Session Persistence:** Fixed a common issue where refreshing the page logs the user out. I implemented Axios request/response interceptors to automatically attach JWT tokens to headers on every refresh, and seamlessly redirect users to the login screen if their token expires.
 
 ---
 
