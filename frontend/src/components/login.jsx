@@ -68,7 +68,7 @@ const Login = ({ setUser, setView }) => {
                     </h2>
                     <p className="auth-subtitle">
                         {mode === 'login' 
-                            ? 'Provide credentials to verify session token matrices.' 
+                            ? 'Provide credentials to verify session .' 
                             : 'Initialize a new system record profile.'}
                     </p>
                 </div>

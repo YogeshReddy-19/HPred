@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import API from '../api';
 import { Sliders, DollarSign, Loader2, Sparkles } from 'lucide-react';
 import './Predict.css';
