@@ -5,7 +5,7 @@ export const getPrediction = async (req, res) => {
     try {
         const houseData = req.body;
         const userId = req.user.id; 
-        const fastapiRes = await axios.post(`${process.env.ML_API_URL}/predict`, houseData);
+        const fastapiRes = await axios.post(`${process.env.ML_API_URL}/predict`, houseData, { timeout: 90000 });
         const predictedPrice = fastapiRes.data.predicted_price;
         await db.query(
             `INSERT INTO predictions 
