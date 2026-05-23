@@ -25,7 +25,11 @@ const Predict = () => {
     const [loading, setLoading] = useState(false);
     const [price, setPrice] = useState(null);
     const [error, setError] = useState('');
-
+    useEffect(() => {
+        fetch('https://hpred-ml.onrender.com/')
+            .then(() => console.log('ML Backend wake-up sequence initiated.'))
+            .catch((err) => console.log('ML Backend warming up...'));
+    }, []);
     const handleInputChange = (field, value) => {
         setFormData(prev => ({
             ...prev,
